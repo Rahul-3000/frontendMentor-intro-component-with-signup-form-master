@@ -6,16 +6,15 @@
   --Grayish_Blue: hsl(246, 25%, 77%);
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
-body
-{
-    background-color: var(--Red);
-    background-image: url('./images/bg-intro-desktop.png');
-    font-family: 'Poppins', sans-serif;
-    color: white;
+body {
+  background-color: var(--Red);
+  background-image: url("./images/bg-intro-desktop.png");
+  font-family: "Poppins", sans-serif;
+  color: white;
 }
 
 .flex {
@@ -23,33 +22,147 @@ body
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 0 auto;
   max-width: 1200px;
   min-height: 100vh;
   padding: 40px;
-
 }
 
-.flex>div{
-  flex:1;   /*take half of available space since flex 1 means equal space*/
-  border: 2px solid red;
+.flex > div {
+  flex: 1; /*take half of available space since flex 1 means equal space*/
 }
 
-h1
-{
-  font-size:40px;
+h1 {
+  font-size: 40px;
   line-height: 56px;
 }
 
-p
-{
+p {
   opacity: 0.8;
 }
 
-.box
-{
+.box {
   background-color: white;
   border-radius: 6px;
   padding: 24px;
-  box-shadow: 0 5px rgba(0,0,0,0.3);
+  box-shadow: 0 5px rgba(0, 0, 0, 0.3);
   margin-bottom: 24px;
+  text-align: center;
+}
+
+.box p {
+  margin: 0;
+}
+
+.box-blue {
+  background-color: var(--Blue);
+}
+
+.form-control {
+  margin-bottom: 30px;
+  margin-top: 0;
+  position: relative;
+}
+
+.form-control small {
+  text-align: right;
+  color: var(--Red);
+  right: 0;
+  margin-bottom: -16px;
+  display: none;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.form-control.error input {
+  border-color: var(--Red);
+  color: var(--Red);
+}
+
+.form-control img {
+  opacity: 0;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+.form-control.error img {
+  opacity: 1;
+}
+
+input {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  padding: 16px 24px;
+  border-radius: 5px;
+  border: 1px solid var(--Grayish_Blue);
+}
+
+input:focus {
+  border: 1px solid var(--Blue);
+  outline: none;
+}
+
+.form-control.error input::placeholder {
+  color: white;
+}
+
+.form-control.error input#email::placeholder {
+  color: var(--Red);
+  font-weight: 600;
+}
+
+button {
+  background-color: var(--Green);
+  box-shadow: 0 5px hsl(154, 72%, 39%);
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  padding: 16px 24px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  border-bottom-width: 1px;
+  transform: translateY(1px);
+}
+
+small {
+  color: var(--Grayish_Blue);
+  font-size: 12px;
+  margin-top: 16px;
+  display: block;
+  font-weight: 600;
+}
+
+small a {
+  color: var(--Red);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  
+  .flex {
+    flex-direction: column;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  p {
+    text-align: center;
+  }
+  
 }
